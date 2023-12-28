@@ -83,6 +83,7 @@
         <span class='bold-data-column'>Country:</span> <input value='${event.target.dataset.country}' name="country" required> <br>
         <br>
         <span class='bold-data-column'>Is Deleted:</span> <input type='checkbox' name='is-deleted' ${event.target.dataset.isDeleted}> <br>
+        <input type="hidden" name="was-deleted" value="${event.target.dataset.isDeleted}" />
         <span class='bold-data-column'>Paper Work:</span> <input type='checkbox' name='paper-work' ${event.target.dataset.paperWork}> <br>
         <span class='bold-data-column'>Payment:</span> <input type='checkbox' name='payment' ${event.target.dataset.payment}> <br>
         <span class='bold-data-column'>Is Member:</span> <input type='checkbox' name='is-member' ${event.target.dataset.isMember}> <br>
@@ -117,6 +118,7 @@
         <span class='bold-data-column'>Last Updated Date:</span> ${event.target.dataset.updatedDate} <br>
         <span class='bold-data-column'>Deleted By:</span> ${event.target.dataset.deletedBy} <br>
         <span class='bold-data-column'>Deleted Date:</span> ${event.target.dataset.deletedDate} <br>
+        <input type="hidden" name="was-deleted-date" value="${event.target.dataset.deletedDate}" />
         <br>
         <span class='bold-data-column'>Comments:</span> <textarea rows="5" class="non-resizable" name="comment">${event.target.dataset.specialRequest}</textarea><br>
         

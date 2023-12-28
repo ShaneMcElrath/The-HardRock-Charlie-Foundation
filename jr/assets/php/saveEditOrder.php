@@ -34,6 +34,30 @@ function saveEditOrder() {
     } else {
         $payment = 'No';
     }
+
+    date_default_timezone_set('America/New_York');
+    //echo($_POST['was-deleted']);
+
+    $current_user = wp_get_current_user();
+    
+    if (isset($_POST['is-deleted']) && $_POST['is-deleted'] == 'on') {
+        $deletedStatus = 'Yes';
+        $deletedBy = $current_user->user_login;
+
+        if (isset($_POST['was-deleted']) && $_POST['was-deleted'] == 'Checked') {
+            $deletedDate = $_POST['was-deleted-date'];
+        } else {
+            $deletedDate = date('Y-m-d H:i:s');
+        }
+    } else {
+        $deletedStatus = 'No';
+        $deletedDate = '';
+        $deletedBy = '';
+    }
+
+
+    
+
   
   
     $form_id = 99;
@@ -114,6 +138,22 @@ function saveEditOrder() {
             'name' => 'radio-1',
             'value' => $deletedStatus,
         ),
+        array(
+            'name' => 'text-3',
+            'value' => $current_user->user_login,
+        ),
+        array(
+            'name' => 'date-1',
+            'value' => date('Y-m-d H:i:s'),
+        ),
+        array(
+            'name' => 'text-4',
+            'value' => $deletedBy,
+        ),
+        array(
+            'name' => 'date-2',
+            'value' => $deletedDate,
+        ),
     );
   
     //echo "Entry Data:<pre>" . print_r($entry_meta, true) . "</pre><br>";
@@ -124,7 +164,7 @@ function saveEditOrder() {
     //echo('show something else');
     //header("refresh: 3");
     //Forminator_API::delete_entries( $form_id, $entry_ids );
-  
+    //phpinfo();
   } else {
     // show something on screen
     //echo('show something');

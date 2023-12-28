@@ -122,18 +122,18 @@
             <div class='col-xl-12'>
               <div class='row my-1'>
                 <div class='col-sm-3'> ID: $entry_id </div>
-                <div class='col-sm'> Name: $entry_first_name $entry_last_name </div>
-                <div class='col-sm'> Email: $entry_email </div>
+                <div class='col-sm customer-name'> Name: $entry_first_name $entry_last_name </div>
+                <div class='col-sm customer-email'> Email: $entry_email </div>
               </div>
               <div class='row my-1'>
-                <div class='col-sm-3'> Paper Work: <input type='checkbox' name='myCheckbox' disabled " . checkIfChecked($entry_paper_work) . "> </div>
-                <div class='col-sm'> Payment: <input type='checkbox' name='myCheckbox' disabled " . checkIfChecked($entry_payment) . "> </div>
-                <div class='col-sm'> Is Member: <input type='checkbox' name='myCheckbox' disabled " . checkIfChecked($entry_is_member) . "> </div>
+                <div class='col-sm-3'> Paper Work: <input class='customer-paper-work' type='checkbox' name='myCheckbox' disabled " . checkIfChecked($entry_paper_work) . "> </div>
+                <div class='col-sm'> Payment: <input class='customer-paperment' type='checkbox' name='myCheckbox' disabled " . checkIfChecked($entry_payment) . "> </div>
+                <div class='col-sm'> Is Member: <input class='customer-is-member' type='checkbox' name='myCheckbox' disabled " . checkIfChecked($entry_is_member) . "> </div>
 
               </div>
               <div class='row my-1'>
                 <div class='col-sm-3'>
-                  <span class='p-1 ". displayStatusOrDeletedColor($entry_status, $entry_is_deleted) ."'> " . displayStatusOrDeleted($entry_status, $entry_is_deleted) . "</span>
+                  <span class='order-status p-1 ". displayStatusOrDeletedColor($entry_status, $entry_is_deleted) ."'> " . displayStatusOrDeleted($entry_status, $entry_is_deleted) . "</span>
                 </div>
                 <div class='col-sm'>
                   <button type='button' class='more-info btn btn-primary' data-id='$entry_id' data-date-created='$entry_created_date' 
